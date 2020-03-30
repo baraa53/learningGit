@@ -36,6 +36,7 @@ public class signin extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
+                            Toast.makeText(signin.this,"successfull",Toast.LENGTH_LONG).show();
                             startActivity(new Intent(signin.this,choose.class));
                         }else{
                             Toast.makeText(signin.this,task.getException().getMessage(),Toast.LENGTH_LONG).show();

@@ -7,12 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
     Button signinbtn,signupbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        auth.signOut();
+
         signinbtn=(Button)findViewById(R.id.signIn);
         signupbtn=(Button)findViewById(R.id.signUp);
 
