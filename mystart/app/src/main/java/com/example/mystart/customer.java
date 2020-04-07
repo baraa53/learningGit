@@ -1,8 +1,10 @@
 package com.example.mystart;
 
+import java.util.ArrayList;
+
 public class customer {
     String name,phone,email;
-
+    ArrayList<cartItem> cart;
     public customer() {
     }
 
@@ -10,10 +12,19 @@ public class customer {
         this.name = name;
         this.phone = phone;
         this.email = email;
+        cart=new ArrayList<cartItem>();
     }
 
     public String getName() {
         return name;
+    }
+
+    public ArrayList<cartItem> getCart() {
+        return cart;
+    }
+
+    public void setCart(ArrayList<cartItem> cart) {
+        this.cart = cart;
     }
 
     public void setName(String name) {

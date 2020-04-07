@@ -24,23 +24,23 @@
 </string-array>
 
 
-    -<string-array name="descriptions">
+    -<string-array name="prices">
 
-    <item>apple ,price 10.</item>
+    <item>10</item>
 
-    <item>bnana,price 8.</item>
+    <item>8</item>
 
-    <item>grape,price 30.</item>
+    <item> 30</item>
 
-    <item>strauberry,price 12.</item>
+    <item>12</item>
 
-    <item>tomato,price 8.</item>
+    <item>8</item>
 
-    <item>cucamper,price 8.</item>
+    <item>8</item>
 
-    <item>carrot,price 5.</item>
+    <item>5</item>
 
-    <item>botato,price 6.</item>
+    <item>6</item>
 
 
 </string-array>

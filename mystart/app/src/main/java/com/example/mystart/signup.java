@@ -30,7 +30,7 @@ public class signup extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference databaseReference;
     long Index;
-
+    customer Customer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,22 +50,11 @@ public class signup extends AppCompatActivity {
                 password=etpassword.getText().toString().trim();
                 name=etname.getText().toString().trim();
                 phone=etphone.getText().toString().trim();
-                func();
-                customer Customer=new customer(name,phone,email);
+                Customer=new customer(name,phone,email);
                 databaseReference=database.getReference("customers");
-                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Index=dataSnapshot.getChildrenCount();
-                    }
+                func();
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    }
-                });
-                databaseReference.push().setValue(Customer);
-                // databaseReference.child(Long.toString(Index)).setValue(Customer);
             }
         });
 
@@ -81,6 +70,7 @@ public class signup extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(signup.this,"createUserWithEmail:success",Toast.LENGTH_LONG).show() ;
+                            databaseReference.child(mAuth.getCurrentUser().getUid()).setValue(Customer);
                             startActivity(new Intent(signup.this,choose.class));
 
                         } else {
