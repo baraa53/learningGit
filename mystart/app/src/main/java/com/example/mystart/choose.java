@@ -37,15 +37,18 @@ public class choose extends AppCompatActivity {
     List<String> product=new ArrayList<String>();
     ArrayAdapter<String> productsArrayAdapter;
     String[] productss;
-    Dialog dialog;
+    Dialog dialog,cartDialog;
     FirebaseAuth mAuth=FirebaseAuth.getInstance();
-    ExtendedFloatingActionButton placeorder;
+    ExtendedFloatingActionButton placeorder,shopingCart,signOut;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
+
         userRef=database.getReference("customers").child(mAuth.getCurrentUser().getUid());
         placeorder=findViewById(R.id.placeorder);
+        shopingCart=findViewById(R.id.shopingCart);
+        signOut=findViewById(R.id.signout);
         ordersRef=database.getReference("orders");
         productss=getResources().getStringArray(R.array.products);
         for(int i=0;i<productss.length;i++){
@@ -89,6 +92,7 @@ public class choose extends AppCompatActivity {
                                     public void onSuccess(Void aVoid) {
                                         Toast.makeText(choose.this,"your order was passed",Toast.LENGTH_LONG).show();
                                         dialog.cancel();
+                                        cartDialog.setContentView(null);
                                     }
                                 });
 
@@ -108,6 +112,28 @@ public class choose extends AppCompatActivity {
                     }
                 });
                 dialog.show();
+            }
+        });
+
+        shopingCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cartDialog=new Dialog(choose.this);
+                cartDialog.setContentView(R.layout.shoping_cart);
+                cartDialog.setTitle("my cart");
+                final TextView shoping=cartDialog.findViewById(R.id.shoping);
+                final   Button ok=cartDialog.findViewById(R.id.ok);
+                cartDialog.show();
+
+            }
+        });
+
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent intent=new Intent(choose.this,MainActivity.class);
+                startActivity(intent);
             }
         });
     }

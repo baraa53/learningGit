@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.internal.Storage;
@@ -31,7 +32,7 @@ public class quantity extends AppCompatActivity {
         TextView tvProduct,tvPrice;
         EditText etAmount;
         ImageView ivPhoto;
-        Button btnAdd;
+        Button btnAdd,cancel;
         FirebaseStorage storage=FirebaseStorage.getInstance();
         StorageReference storageReference;
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
@@ -48,7 +49,7 @@ public class quantity extends AppCompatActivity {
             etAmount=findViewById(R.id.etAmount);
             ivPhoto=findViewById(R.id.ivPhoto);
             btnAdd=findViewById(R.id.btnAdd);
-
+            cancel=findViewById(R.id.btnBack);
 
           x=getIntent().getIntExtra("name",0);
           storageReference.child(getResources().getStringArray(R.array.products)[x]).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
@@ -57,6 +58,14 @@ public class quantity extends AppCompatActivity {
                   Glide.with(quantity.this).load(uri.toString()).placeholder(R.drawable.ic_launcher_foreground).into(ivPhoto);
               }
           });
+
+            cancel.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent=new Intent(quantity.this,choose.class);
+                    startActivity(intent);
+                }
+            });
 
           tvProduct.setText(getResources().getStringArray(R.array.products)[x]);
           tvPrice.setText(getResources().getStringArray(R.array.prices)[x]);

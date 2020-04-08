@@ -55,7 +55,8 @@ public class cartItem {
         return
                 "amount=" + amount +
                 ", price=" + price +
-                ", product='" + product
+                ", product='" + product+"" +
+                        "       "
                 ;
     }
 }

@@ -14,14 +14,14 @@
         android:clickable="true" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/shopingCart"
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:icon="@drawable/ic_shopping_cart"
         android:layout_gravity="bottom|end"
         android:layout_margin="8dp"
         android:text="shoping cart"
-        />
+        app:icon="@drawable/ic_shopping_cart" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
@@ -32,4 +32,14 @@
         android:layout_margin="8dp"
         android:text="placeorder"
         app:icon="@drawable/ic_playlist_add_check"/>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/signout"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="8dp"
+        android:text="sign out"
+        app:icon="@drawable/ic_close" />
 </FrameLayout>
