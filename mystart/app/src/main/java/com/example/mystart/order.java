@@ -4,29 +4,43 @@ import java.util.ArrayList;
 
 public class order {
     private customer customer;
-    ArrayList<cartItem> items;
 
+    private double totalPrice;
+
+    //activity that contains the customer's order and the total price of his order
     public order() {
     }
 
-    public order(com.example.mystart.customer customer, ArrayList<cartItem> items) {
+    public order(customer customer) {
         this.customer = customer;
-        this.items = items;
+        totalPrice=0;
+        for(int i=0;i<customer.getCart().size();i++){
+            totalPrice+=customer.getCart().get(i).getPrice();
+        }
     }
 
-    public com.example.mystart.customer getCustomer() {
+    public customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(com.example.mystart.customer customer) {
+    public void setCustomer(customer customer) {
         this.customer = customer;
     }
 
-    public ArrayList<cartItem> getItems() {
-        return items;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setItems(ArrayList<cartItem> items) {
-        this.items = items;
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "place order by " +
+                customer.getName()+"\n"+
+                customer.getCart()+"\n"+
+                "Total price: "+totalPrice+"shekels"
+                ;
     }
 }

@@ -5,9 +5,8 @@ import android.content.Context;
 public class cartItem {
     private double amount,price;
     private int position;
-
     private String product;
-
+    //activity that contain the amount of the item and its name and calculate the price for this amount
     public cartItem() {
     }
 
@@ -56,7 +55,7 @@ public class cartItem {
                 "amount=" + amount +
                 ", price=" + price +
                 ", product='" + product+"" +
-                        "       "
+                        "\n"
                 ;
     }
 }

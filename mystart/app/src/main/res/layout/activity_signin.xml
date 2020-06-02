@@ -4,33 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="30dp"
-    android:layout_marginRight="20dp"
+
+    android:background="@drawable/appleswater"
     android:orientation="vertical"
     tools:context=".signin">
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="377dp"
+        android:layout_height="56dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
+        android:background="@drawable/custom_label1"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#fff"
+        android:textColor="#fff"/>
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="377dp"
+        android:layout_height="56dp"
+        android:background="@drawable/custom_label1"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
         android:ems="10"
         android:hint="password"
-        android:inputType="textPassword" />
+        android:textColorHint="#fff"
+        android:gravity="center"
+        android:inputType="textPassword"
+        android:textColor="#fff"/>
 
     <Button
         android:id="@+id/login"

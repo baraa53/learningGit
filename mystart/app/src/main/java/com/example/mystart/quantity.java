@@ -59,6 +59,7 @@ public class quantity extends AppCompatActivity {
               }
           });
 
+          //going back to the previous page without adding any thing to the cart
             cancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -68,8 +69,9 @@ public class quantity extends AppCompatActivity {
             });
 
           tvProduct.setText(getResources().getStringArray(R.array.products)[x]);
-          tvPrice.setText(getResources().getStringArray(R.array.prices)[x]);
+          tvPrice.setText(getResources().getStringArray(R.array.prices)[x]+" shekels/kg");
 
+          //add the amount with the product name and the price to the database
           btnAdd.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {

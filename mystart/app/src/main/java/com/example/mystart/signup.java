@@ -43,6 +43,7 @@ public class signup extends AppCompatActivity {
         etname=findViewById(R.id.etname);
         etphone=findViewById(R.id.etphone);
 
+        //In here you sing up to the app.
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +53,7 @@ public class signup extends AppCompatActivity {
                 phone=etphone.getText().toString().trim();
                 Customer=new customer(name,phone,email);
                 databaseReference=database.getReference("customers");
+               //Calls the function func.
                 func();
 
 
@@ -60,7 +62,7 @@ public class signup extends AppCompatActivity {
 
 
     }
-
+    //This function adds users to the database.
     private void func() {
 
         mAuth.createUserWithEmailAndPassword(email, password)

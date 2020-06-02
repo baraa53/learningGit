@@ -29,6 +29,7 @@ public class signin extends AppCompatActivity {
         btnlogin=findViewById(R.id.login);
 
         firebaseAuth=FirebaseAuth.getInstance();
+        //In here you log into the app.
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

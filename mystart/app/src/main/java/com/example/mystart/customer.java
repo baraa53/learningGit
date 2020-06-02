@@ -8,6 +8,8 @@ public class customer {
     public customer() {
     }
 
+    //activity that contains the details of the customer
+
     public customer(String name, String phone, String email) {
         this.name = name;
         this.phone = phone;

@@ -10,25 +10,31 @@
         android:id="@+id/tvProduct"
         android:layout_width="163dp"
         android:layout_height="46dp"
+        android:background="@drawable/custom_label2"
+        android:gravity="center"
         android:text="TextView"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.79"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintVertical_bias="0.107" />
 
     <TextView
         android:id="@+id/tvPrice"
         android:layout_width="156dp"
         android:layout_height="54dp"
         android:text="TextView"
+        android:textSize="25sp"
+        android:background="@drawable/custom_label2"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintHorizontal_bias="0.796"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28" />
+        app:layout_constraintVertical_bias="0.276" />
 
     <ImageView
         android:id="@+id/ivPhoto"
@@ -44,10 +50,12 @@
 
     <EditText
         android:id="@+id/etAmount"
-        android:layout_width="233dp"
+        android:layout_width="260dp"
         android:layout_height="52dp"
         android:ems="10"
-        android:hint="enter the amount you need"
+        android:background="@drawable/custom_label2"
+        android:gravity="center"
+        android:hint="enter the amount you need in kg"
         android:inputType="number|numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +80,7 @@
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="cancel"
+        android:text="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.083"

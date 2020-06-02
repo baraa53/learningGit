@@ -42,4 +42,6 @@
         android:layout_margin="8dp"
         android:text="sign out"
         app:icon="@drawable/ic_close" />
+
+
 </FrameLayout>
